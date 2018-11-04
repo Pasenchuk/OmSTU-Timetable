@@ -13,7 +13,6 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
-        <include layout="@layout/view_logo" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"

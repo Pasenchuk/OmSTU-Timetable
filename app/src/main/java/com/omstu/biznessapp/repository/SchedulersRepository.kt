@@ -1,4 +1,4 @@
-package com.mney.wallet.repository
+package com.omstu.biznessapp.repository
 
 import io.reactivex.FlowableTransformer
 import io.reactivex.ObservableTransformer

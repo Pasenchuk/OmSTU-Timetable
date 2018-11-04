@@ -1,14 +1,13 @@
-package com.mney.wallet.ui.base
+package com.omstu.biznessapp.ui.base
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import android.content.Intent
-import com.mney.wallet.R
-import com.mney.wallet.di.AppModule
-import com.mney.wallet.repository.LocalRepository
-import com.mney.wallet.repository.NetworkRepository
-import com.mney.wallet.router.RouterCommand
-import com.mney.wallet.router.Screen
+import com.omstu.biznessapp.R
+import com.omstu.biznessapp.di.AppModule
+import com.omstu.biznessapp.repository.LocalRepository
+import com.omstu.biznessapp.repository.NetworkRepository
+import com.omstu.biznessapp.router.RouterCommand
 
 abstract class BasePresenter(val appModule: AppModule) : ViewModel() {
 
@@ -29,10 +28,6 @@ abstract class BasePresenter(val appModule: AppModule) : ViewModel() {
             list.add(command)
         }
         routerCommandQueue.postValue(list)
-    }
-
-    fun onSettingsClick() {
-        postRouterCommandQueue(RouterCommand.OpenScreen(Screen.SETTINGS))
     }
 
     companion object {

@@ -1,4 +1,4 @@
-package com.mney.wallet.ui.base
+package com.omstu.biznessapp.ui.base
 
 import android.app.ProgressDialog
 import android.arch.lifecycle.Observer
@@ -8,9 +8,9 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import com.mney.wallet.di.AppModule
-import com.mney.wallet.di.appModule
-import com.mney.wallet.router.Router
+import com.omstu.biznessapp.di.AppModule
+import com.omstu.biznessapp.di.appModule
+import com.omstu.biznessapp.router.Router
 
 abstract class BaseActivity : AppCompatActivity() {
 

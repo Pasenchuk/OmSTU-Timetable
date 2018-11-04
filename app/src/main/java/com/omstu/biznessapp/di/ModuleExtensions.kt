@@ -1,8 +1,8 @@
-package com.mney.wallet.di
+package com.omstu.biznessapp.di
 
 import android.app.Activity
 import android.support.v4.app.Fragment
-import com.mney.wallet.app.MneyApp
+import com.omstu.biznessapp.app.TimeTableApp
 
 /**
  * Created by Pasenchuk Victor on 03/06/2017
@@ -10,7 +10,7 @@ import com.mney.wallet.app.MneyApp
 
 
 val Activity.appModule: AppModule
-    get() = (this.application as MneyApp).appModule
+    get() = (this.application as TimeTableApp).appModule
 
 val Fragment.appModule: AppModule
-    get() = (this.activity?.application as MneyApp).appModule
+    get() = (this.activity?.application as TimeTableApp).appModule

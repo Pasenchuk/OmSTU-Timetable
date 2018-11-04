@@ -1,4 +1,4 @@
-package com.mney.wallet.domain
+package com.omstu.biznessapp.domain
 
 data class RegisterUiModel(
         val firstName: String,

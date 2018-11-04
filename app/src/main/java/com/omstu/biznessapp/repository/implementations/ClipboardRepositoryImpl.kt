@@ -1,10 +1,10 @@
-package com.mney.wallet.repository.implementations
+package com.omstu.biznessapp.repository.implementations
 
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Context.CLIPBOARD_SERVICE
-import com.mney.wallet.repository.ClipboardRepository
+import com.omstu.biznessapp.repository.ClipboardRepository
 
 
 class ClipboardRepositoryImpl(val context: Context) : ClipboardRepository {

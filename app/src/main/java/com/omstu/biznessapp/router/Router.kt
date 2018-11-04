@@ -1,4 +1,4 @@
-package com.mney.wallet.router
+package com.omstu.biznessapp.router
 
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.MutableLiveData

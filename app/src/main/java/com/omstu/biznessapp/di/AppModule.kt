@@ -1,12 +1,12 @@
-package com.mney.wallet.di
+package com.omstu.biznessapp.di
 
 import android.content.Context
-import com.mney.wallet.domain.LogoutInteractor
-import com.mney.wallet.repository.*
-import com.mney.wallet.repository.implementations.ClipboardRepositoryImpl
-import com.mney.wallet.repository.implementations.ImagesRepositoryImpl
-import com.mney.wallet.repository.implementations.LoggingRepositoryImpl
-import com.mney.wallet.router.RouterFactory
+import com.omstu.biznessapp.domain.LogoutInteractor
+import com.omstu.biznessapp.repository.implementations.ClipboardRepositoryImpl
+import com.omstu.biznessapp.repository.implementations.ImagesRepositoryImpl
+import com.omstu.biznessapp.repository.implementations.LoggingRepositoryImpl
+import com.omstu.biznessapp.router.RouterFactory
+import com.omstu.biznessapp.repository.*
 import io.reactivex.Scheduler
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -63,9 +63,6 @@ open class AppModule(val context: Context,
 
                 request = addNonEmptyQueryParam(request, "key2", localRepository.token)
                 request = addNonEmptyQueryParam(request, "account", localRepository.id)
-                localRepository.selectedCoin?.coinname?.let {
-                    request = addNonEmptyQueryParam(request, "coinname", it)
-                }
 
                 chain.proceed(request)
             }

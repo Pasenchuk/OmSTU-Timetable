@@ -1,14 +1,13 @@
-package com.mney.wallet.repository
+package com.omstu.biznessapp.repository
 
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
-import com.mney.wallet.network.Coin
 import kotlin.reflect.KProperty
 
 open class LocalRepository(context: Context) {
 
-    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(Companion.MNEY_PREFS, Context.MODE_PRIVATE);
+    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(MNEY_PREFS, Context.MODE_PRIVATE);
 
     private val gson = Gson()
 
@@ -44,7 +43,6 @@ open class LocalRepository(context: Context) {
     var firstname by StringPreferenceDelegate()
     var lastname by StringPreferenceDelegate()
 
-    var selectedCoin by JsonPreferenceDelegate(Coin::class.java)
 
     fun clear() {
         sharedPreferences

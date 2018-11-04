@@ -1,4 +1,4 @@
-package com.mney.wallet.router.impl
+package com.omstu.biznessapp.router.impl
 
 import android.arch.lifecycle.MutableLiveData
 import android.content.Intent
@@ -7,8 +7,8 @@ import android.support.v4.app.Fragment
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import com.mney.wallet.router.Router
-import com.mney.wallet.router.RouterCommand
+import com.omstu.biznessapp.router.Router
+import com.omstu.biznessapp.router.RouterCommand
 
 class FragmentRouter(private val fragment: Fragment, liveData: MutableLiveData<MutableList<RouterCommand>>) : Router(fragment, liveData) {
 

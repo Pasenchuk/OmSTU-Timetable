@@ -1,7 +1,7 @@
-package com.mney.wallet.repository.implementations
+package com.omstu.biznessapp.repository.implementations
 
 import android.util.Log
-import com.mney.wallet.repository.LoggingRepository
+import com.omstu.biznessapp.repository.LoggingRepository
 
 
 class LoggingRepositoryImpl : LoggingRepository {

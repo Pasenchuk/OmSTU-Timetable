@@ -3,10 +3,11 @@ package com.mney.wallet.ui.auth
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.widget.EditText
-import com.mney.wallet.R
-import com.mney.wallet.di.AppModule
-import com.mney.wallet.ui.base.BaseActivity
-import com.mney.wallet.ui.base.BasePresenter
+import com.omstu.biznessapp.ui.base.BaseActivity
+import com.omstu.biznessapp.ui.base.BasePresenter
+import com.omstu.biznessapp.R
+import com.omstu.biznessapp.di.AppModule
+import com.omstu.biznessapp.ui.auth.LoginPresenter
 
 
 class LoginActivity : BaseActivity() {

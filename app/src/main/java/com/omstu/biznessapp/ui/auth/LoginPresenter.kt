@@ -1,12 +1,11 @@
-package com.mney.wallet.ui.auth
+package com.omstu.biznessapp.ui.auth
 
 import android.arch.lifecycle.MutableLiveData
-import com.mney.wallet.R
-import com.mney.wallet.di.AppModule
-import com.mney.wallet.router.RouterCommand
-import com.mney.wallet.router.Screen
-import com.mney.wallet.ui.base.BasePresenter
-import com.mney.wallet.utils.md5
+import com.omstu.biznessapp.router.RouterCommand
+import com.omstu.biznessapp.router.Screen
+import com.omstu.biznessapp.ui.base.BasePresenter
+import com.omstu.biznessapp.R
+import com.omstu.biznessapp.di.AppModule
 
 class LoginPresenter(appModule: AppModule) : BasePresenter(appModule) {
 
@@ -24,15 +23,15 @@ class LoginPresenter(appModule: AppModule) : BasePresenter(appModule) {
             else -> {
                 progressVisibility.postValue(true)
 
-                appModule.networkRepository
-                        .login(email, md5(password))
-                        .compose(appModule.schedulersRepository.networkAsyncTransformer())
-                        .subscribe({
-                            progressVisibility.postValue(false)
-                            localRepository.email = email
-                            localRepository.id = it.uID
-                            postRouterCommandQueue(RouterCommand.ShowToastRes(R.string.success), RouterCommand.OpenScreen(Screen.CODE_CONFIRM, FLAG_CLEAR_BACK_STACK))
-                        }, errorHandler)
+//                appModule.networkRepository
+//                        .login(email, md5(password))
+//                        .compose(appModule.schedulersRepository.networkAsyncTransformer())
+//                        .subscribe({
+//                            progressVisibility.postValue(false)
+//                            localRepository.email = email
+//                            localRepository.id = it.uID
+//                            postRouterCommandQueue(RouterCommand.ShowToastRes(R.string.success), RouterCommand.OpenScreen(Screen.CODE_CONFIRM, FLAG_CLEAR_BACK_STACK))
+//                        }, errorHandler)
             }
         }
 

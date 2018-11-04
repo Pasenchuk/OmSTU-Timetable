@@ -11,7 +11,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
 
-class MneyApp : Application() {
+class TimeTableApp : Application() {
 
     lateinit var appModule: AppModule
         private set

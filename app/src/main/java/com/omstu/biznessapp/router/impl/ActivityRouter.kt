@@ -1,4 +1,4 @@
-package com.mney.wallet.router.impl
+package com.omstu.biznessapp.router.impl
 
 import android.arch.lifecycle.MutableLiveData
 import android.content.Intent
@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import com.mney.wallet.router.Router
-import com.mney.wallet.router.RouterCommand
+import com.omstu.biznessapp.router.Router
+import com.omstu.biznessapp.router.RouterCommand
 
 class ActivityRouter(private val activity: AppCompatActivity, liveData: MutableLiveData<MutableList<RouterCommand>>) : Router(activity, liveData) {
 
