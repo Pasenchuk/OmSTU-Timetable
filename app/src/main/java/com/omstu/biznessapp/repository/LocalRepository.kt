@@ -37,15 +37,7 @@ open class LocalRepository(context: Context) {
 
     var fnpp by StringPreferenceDelegate()
 
-    var token by StringPreferenceDelegate()
-
-    var id by StringPreferenceDelegate()
-
     var email by StringPreferenceDelegate()
-    var phone by StringPreferenceDelegate()
-    var firstname by StringPreferenceDelegate()
-    var lastname by StringPreferenceDelegate()
-
 
     fun clear() {
         sharedPreferences

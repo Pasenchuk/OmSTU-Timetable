@@ -17,14 +17,15 @@
     <string name="confirm">ПОДТВЕРДИТЬ</string>
     <string name="enter_key1">Enter Key from e-mail</string>
     <string name="logged_out">Logged out</string>
+    <string name="log_out_alert">Вы уверены, что хотите выйти из аккаунта?</string>
     <string name="already_logged_in">You\'re already logged in. Please, logout first.</string>
-    <string name="logout">Logout</string>
+    <string name="logout">Выйти</string>
     <string name="please_login">Please, login</string>
     <string name="profile">Profile</string>
     <string name="currencies">Currencies</string>
-    <string name="coin_logo">Coin Logo</string>
-    <string name="rate_usd">Rate(USD):</string>
-    <string name="balance">Balance:</string>
+    <string name="new_table">Новая</string>
+    <string name="open_table">Открыта</string>
+    <string name="closed_table">Закрыта</string>
     <string name="balance_received">Received:</string>
     <string name="balance_spent">Spent:</string>
     <string name="title_activity_transactions">Transactions</string>
@@ -56,4 +57,5 @@
     <string name="category">Category</string>
     <string name="copy">Copy</string>
     <string name="time">Time</string>
+    <string name="title_activity_groups">Ведомости</string>
 </resources>

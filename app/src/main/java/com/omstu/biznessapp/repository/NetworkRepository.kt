@@ -12,12 +12,12 @@ import retrofit2.http.POST
 
 interface NetworkRepository {
 
-    @POST("/fnppList")
+    @POST("fnppList")
     fun getGroups(@Body() groupsRequest: GroupsRequest): Flowable<List<Group>>
 
-    @POST("/getListStruct")
+    @POST("getListStruct")
     fun getTable(@Body() tableRequest: TableRequest): Flowable<Table>
 
-    @POST("/updateFieldRatingHours")
+    @POST("updateFieldRatingHours")
     fun updateTable(@Body() tableRequest: TableRequest): Flowable<UpdateResponse>
 }

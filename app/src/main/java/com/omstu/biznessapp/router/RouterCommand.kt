@@ -11,6 +11,6 @@ sealed class RouterCommand {
     class ShowTextError(val vId: Int, val resId: Int) : RouterCommand()
     class HideTextError(val vId: Int) : RouterCommand()
     class ShowToastStr(val message: String) : RouterCommand()
-    class ShowDialog(val title: Int, val message: String, val positiveButton: Button? = null, val neutralButton: Button? = null) : RouterCommand()
+    class ShowDialog(val title: Int, val message: Int, val positiveButton: Button? = null, val neutralButton: Button? = null) : RouterCommand()
     class Close() : RouterCommand()
 }

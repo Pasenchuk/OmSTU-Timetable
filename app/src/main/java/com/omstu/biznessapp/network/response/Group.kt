@@ -7,11 +7,11 @@ data class Group(@SerializedName("nrec")
                  @SerializedName("numdoc")
                  val numdoc: String = "",
                  @SerializedName("year")
-                 val year: String = "",
+                 val year: Int = 0,
                  @SerializedName("semester")
                  val semester: String = "",
                  @SerializedName("status")
-                 val status: String = "",
+                 val status: Int = 0,
                  @SerializedName("formEdu")
                  val formEdu: String = "",
                  @SerializedName("studGroup")

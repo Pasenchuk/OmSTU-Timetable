@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="10dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/v_group_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/v_discipline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Распознавание образов"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+
+            <TextView
+                android:id="@+id/v_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017, весенний, открыта"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+            <TextView
+                android:id="@+id/v_subdivision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="КЗИ-162; 57_КЗИ; РТФ"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+            <TextView
+                android:id="@+id/v_group_footer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Данилова Ольга Тимофеевна"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+</FrameLayout>
