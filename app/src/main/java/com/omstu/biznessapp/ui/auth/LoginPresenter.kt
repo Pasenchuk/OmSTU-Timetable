@@ -19,19 +19,23 @@ class LoginPresenter(appModule: AppModule) : BasePresenter(appModule) {
 
         when {
             password.isEmpty() -> postRouterCommandQueue(RouterCommand.ShowTextError(R.id.v_sign_in_password, R.string.should_not_be_empty))
-            !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> postRouterCommandQueue(RouterCommand.ShowTextError(R.id.v_sign_in_email, R.string.invalid_email))
+            email.isEmpty() -> postRouterCommandQueue(RouterCommand.ShowTextError(R.id.v_sign_in_email, R.string.invalid_email))
             else -> {
                 progressVisibility.postValue(true)
 
-//                appModule.networkRepository
-//                        .login(email, md5(password))
-//                        .compose(appModule.schedulersRepository.networkAsyncTransformer())
-//                        .subscribe({
-//                            progressVisibility.postValue(false)
-//                            localRepository.email = email
-//                            localRepository.id = it.uID
-//                            postRouterCommandQueue(RouterCommand.ShowToastRes(R.string.success), RouterCommand.OpenScreen(Screen.CODE_CONFIRM, FLAG_CLEAR_BACK_STACK))
-//                        }, errorHandler)
+                appModule.authRepository
+                        .login(email, password)
+                        .compose(appModule.schedulersRepository.networkAsyncTransformer())
+                        .subscribe({
+                            progressVisibility.postValue(false)
+                            if (it.err.isEmpty()) {
+                                localRepository.email = email
+                                localRepository.fnpp = it.fnpp
+                                postRouterCommandQueue(RouterCommand.ShowToastRes(R.string.success), RouterCommand.OpenScreen(Screen.GROUPS, FLAG_CLEAR_BACK_STACK))
+                            } else {
+                                postRouterCommandQueue(RouterCommand.ShowTextError(R.id.v_sign_in_email, R.string.invalid_credentials),RouterCommand.ShowTextError(R.id.v_sign_in_password, R.string.invalid_credentials), RouterCommand.ShowToastStr(it.err))
+                            }
+                        }, errorHandler)
             }
         }
 

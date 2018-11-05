@@ -1,4 +1,4 @@
-package com.mney.wallet.ui.auth
+package com.omstu.biznessapp.ui.auth
 
 import android.arch.lifecycle.Observer
 import android.os.Bundle
@@ -7,7 +7,6 @@ import com.omstu.biznessapp.ui.base.BaseActivity
 import com.omstu.biznessapp.ui.base.BasePresenter
 import com.omstu.biznessapp.R
 import com.omstu.biznessapp.di.AppModule
-import com.omstu.biznessapp.ui.auth.LoginPresenter
 
 
 class LoginActivity : BaseActivity() {

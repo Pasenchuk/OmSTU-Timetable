@@ -7,7 +7,7 @@ import kotlin.reflect.KProperty
 
 open class LocalRepository(context: Context) {
 
-    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(MNEY_PREFS, Context.MODE_PRIVATE);
+    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(OMSTU_PREFS, Context.MODE_PRIVATE);
 
     private val gson = Gson()
 
@@ -27,12 +27,15 @@ open class LocalRepository(context: Context) {
                 return null
             return gson.fromJson(json, clazz)
         }
+
         operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T?) =
                 sharedPreferences
                         .edit()
                         .putString(property.name, gson.toJson(value))
                         .apply()
     }
+
+    var fnpp by StringPreferenceDelegate()
 
     var token by StringPreferenceDelegate()
 
@@ -52,6 +55,6 @@ open class LocalRepository(context: Context) {
     }
 
     companion object {
-        const val MNEY_PREFS = "MNEY_PREFS"
+        const val OMSTU_PREFS = "OMSTU_PREFS"
     }
 }

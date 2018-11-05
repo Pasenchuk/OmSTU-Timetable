@@ -16,6 +16,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
+import kotlin.jvm.java
 
 
 open class AppModule(val context: Context,
@@ -31,6 +32,11 @@ open class AppModule(val context: Context,
                      val clipboardRepository: ClipboardRepository = ClipboardRepositoryImpl(context),
                      val dateRepository: () -> Date = { Date() }) {
 
+
+    val httpClient = OkHttpClient
+            .Builder()
+            .addInterceptor(HttpLoggingInterceptor().setLevel(logLevel))
+            .build()
 
     val localRepository by lazy { LocalRepository(context) }
     val logoutInteractor by lazy { LogoutInteractor(localRepository) }
@@ -48,30 +54,6 @@ open class AppModule(val context: Context,
         if (networkRepositoryMock != null)
             networkRepositoryMock
         else {
-            val logging = HttpLoggingInterceptor().apply {
-                level = logLevel
-            }
-
-            val interceptor = Interceptor { chain ->
-                val apiBuilder = chain
-                        .request()
-                        .newBuilder()
-                        .addHeader("Content-Type", "application/json")
-
-                var request = apiBuilder
-                        .build()
-
-                request = addNonEmptyQueryParam(request, "key2", localRepository.token)
-                request = addNonEmptyQueryParam(request, "account", localRepository.id)
-
-                chain.proceed(request)
-            }
-
-            val httpClient = OkHttpClient
-                    .Builder()
-                    .addInterceptor(interceptor)
-                    .addInterceptor(logging)
-                    .build()
 
             Retrofit.Builder()
                     .baseUrl(baseUrl)
@@ -81,6 +63,18 @@ open class AppModule(val context: Context,
                     .build()
                     .create(NetworkRepository::class.java)
         }
+    }
+
+
+    val authRepository: AuthRepository by lazy {
+
+        Retrofit.Builder()
+                .baseUrl("https://omgtu.ru/ecab/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(httpClient)
+                .build()
+                .create(AuthRepository::class.java)
     }
 
     fun addNonEmptyQueryParam(request: Request, name: String, value: String): Request {

@@ -4,7 +4,7 @@
     <string name="first_name">Имя</string>
     <string name="last_name">Фамилия</string>
     <string name="phone">Телефон</string>
-    <string name="e_mail">E-Mail</string>
+    <string name="e_mail">Login</string>
     <string name="password">Пароль</string>
     <string name="password_confirmation">Password Confirmation</string>
     <string name="register">Register</string>
@@ -12,7 +12,8 @@
     <string name="network_error">Ошибка сети</string>
     <string name="success">Успешно</string>
     <string name="password_not_match">Password and confirmation don\'t match</string>
-    <string name="invalid_email">Неверный e-mail</string>
+    <string name="invalid_email">Неверный login</string>
+    <string name="invalid_credentials">Неверные учётные данные</string>
     <string name="confirm">ПОДТВЕРДИТЬ</string>
     <string name="enter_key1">Enter Key from e-mail</string>
     <string name="logged_out">Logged out</string>
