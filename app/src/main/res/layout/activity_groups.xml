@@ -7,7 +7,7 @@
     android:background="@drawable/background"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".ui.groups.GroupsActivity">
+    tools:context=".ui.table.TableActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"

@@ -2,9 +2,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true"
     android:padding="10dp">
 
     <android.support.v7.widget.CardView
@@ -16,6 +13,9 @@
             android:id="@+id/v_group_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:orientation="vertical"
             android:padding="15dp">
 

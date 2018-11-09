@@ -9,6 +9,7 @@ import com.omstu.biznessapp.network.request.GroupsRequest
 import com.omstu.biznessapp.network.response.Group
 import com.omstu.biznessapp.router.Button
 import com.omstu.biznessapp.router.RouterCommand
+import com.omstu.biznessapp.router.Screen
 import com.omstu.biznessapp.ui.base.BasePresenter
 
 class GroupsPresenter(appModule: AppModule) : BasePresenter(appModule) {
@@ -54,7 +55,8 @@ class GroupsPresenter(appModule: AppModule) : BasePresenter(appModule) {
     }
 
     fun onGroupClicked(group: Group) {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        localRepository.selectedGroup = group;
+        postRouterCommandQueue(RouterCommand.OpenScreen(Screen.TABLE))
     }
 
     fun onLogoutClick() {

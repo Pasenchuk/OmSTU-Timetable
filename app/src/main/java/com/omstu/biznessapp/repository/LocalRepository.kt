@@ -3,6 +3,7 @@ package com.omstu.biznessapp.repository
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
+import com.omstu.biznessapp.network.response.Group
 import kotlin.reflect.KProperty
 
 open class LocalRepository(context: Context) {
@@ -38,6 +39,7 @@ open class LocalRepository(context: Context) {
     var fnpp by StringPreferenceDelegate()
 
     var email by StringPreferenceDelegate()
+    var selectedGroup by JsonPreferenceDelegate(Group::class.java)
 
     fun clear() {
         sharedPreferences
