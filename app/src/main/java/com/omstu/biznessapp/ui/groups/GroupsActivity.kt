@@ -1,13 +1,11 @@
 package com.omstu.biznessapp.ui.groups
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.omstu.biznessapp.R
 import com.omstu.biznessapp.di.AppModule
 import com.omstu.biznessapp.ui.base.BaseActivity
 import com.omstu.biznessapp.ui.base.BasePresenter
-import com.omstu.biznessapp.ui.main.MainPresenter
 import kotlinx.android.synthetic.main.activity_groups.*
 
 class GroupsActivity : BaseActivity() {

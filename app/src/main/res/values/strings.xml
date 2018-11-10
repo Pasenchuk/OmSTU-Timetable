@@ -59,7 +59,9 @@
     <string name="time">Time</string>
     <string name="title_activity_groups">Ведомости</string>
     <string name="title_activity_table">Таблица успеваемости</string>
+    <string name="title_activity_sign">Распишитесь</string>
     <string name="total_hours">Часы</string>
     <string name="percent">%</string>
     <string name="rating">Рейтинг</string>
+    <string name="sending">Отправка данных…</string>
 </resources>

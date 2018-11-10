@@ -17,7 +17,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
+        android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -33,6 +33,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="?attr/actionBarSize"
                 android:orientation="vertical"
                 android:padding="15dp"
                 app:layout_collapseMode="parallax">
@@ -52,7 +53,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
                 <TextView
-                    android:id="@+id/v_group_footer"
+                    android:id="@+id/v_teacher"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Данилова Ольга Тимофеевна"
@@ -60,7 +61,6 @@
             </LinearLayout>
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="bottom"
@@ -68,6 +68,7 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay">
 
                 <TextView
+                    android:id="@+id/v_group_title"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"

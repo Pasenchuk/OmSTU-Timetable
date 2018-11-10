@@ -32,6 +32,9 @@
             android:name=".ui.table.TableActivity"
             android:label="@string/title_activity_table"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.sign.SignActivity"
+            android:label="@string/title_activity_sign" />
     </application>
 
 </manifest>
