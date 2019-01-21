@@ -64,6 +64,7 @@
     <string name="percent">%</string>
     <string name="rating">Рейтинг</string>
     <string name="sending">Отправка данных…</string>
+    <string name="sent">Данные отправлены…</string>
     <string name="action_clear">Очистить</string>
     <string name="action_black">Чёрный цвет</string>
     <string name="action_blue">Голубой цвет</string>

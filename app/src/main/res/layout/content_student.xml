@@ -36,6 +36,7 @@
                         android:id="@+id/v_total_hours"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:inputType="number"
                         android:hint="@string/total_hours" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -48,6 +49,7 @@
                     <EditText
                         android:id="@+id/v_precent"
                         android:layout_width="match_parent"
+                        android:inputType="number"
                         android:layout_height="wrap_content"
                         android:hint="@string/percent" />
                 </android.support.design.widget.TextInputLayout>
@@ -60,6 +62,7 @@
 
                     <EditText
                         android:id="@+id/v_rating"
+                        android:inputType="number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/rating" />

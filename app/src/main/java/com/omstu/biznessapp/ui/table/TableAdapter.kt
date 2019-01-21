@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
+import com.jakewharton.rxbinding2.widget.RxTextView
 import com.omstu.biznessapp.R
 import com.omstu.biznessapp.network.response.StudentItem
 import com.omstu.biznessapp.ui.base.BaseActivity
@@ -57,6 +58,19 @@ class TableAdapter(val activity: BaseActivity, val tablePresenter: TablePresente
                 vTotalHours.setText(totalStudHours.toString())
                 vPrecent.setText(percent.toString())
                 vRating.setText(rating.toString())
+
+                RxTextView.afterTextChangeEvents(vRating).subscribe {
+                    uiModel.rating = Integer.valueOf(it.editable().toString())
+                    tablePresenter.onEntryChanged(uiModel)
+                }
+                RxTextView.afterTextChangeEvents(vPrecent).subscribe {
+                    uiModel.percent = Integer.valueOf(it.editable().toString())
+                    tablePresenter.onEntryChanged(uiModel)
+                }
+                RxTextView.afterTextChangeEvents(vTotalHours).subscribe {
+                    uiModel.totalStudHours = Integer.valueOf(it.editable().toString())
+                    tablePresenter.onEntryChanged(uiModel)
+                }
             }
         }
     }

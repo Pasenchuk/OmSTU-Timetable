@@ -1,12 +1,17 @@
 package com.omstu.biznessapp.ui.sign
 
 import android.graphics.Color
+import com.google.gson.Gson
 import com.kasib.stlsdk.sign.SignView
 import com.omstu.biznessapp.R
 import com.omstu.biznessapp.di.AppModule
 import com.omstu.biznessapp.repository.LocalRepository
 import com.omstu.biznessapp.router.RouterCommand
 import com.omstu.biznessapp.ui.base.BasePresenter
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import java.io.File
 import java.io.FileOutputStream
 
 
@@ -18,7 +23,23 @@ class SignPresenter(appModule: AppModule) : BasePresenter(appModule) {
     }
 
     fun onFabClick(signView: SignView) {
+        progressVisibility.postValue(true)
+
         postRouterCommandQueue(RouterCommand.ShowToastRes(R.string.sending), RouterCommand.Close())
+        val fileName = saveSignatureFile(signView)
+
+        val signImageFile = File(fileName)
+
+        val signImagePart = MultipartBody.Part.createFormData("signImage", signImageFile.getName(), RequestBody.create(MediaType.parse("image/png"), signImageFile));
+        val signJsonPart = MultipartBody.Part.createFormData("signJson", Gson().toJson(signView.sign));
+        val tableJsonPart = MultipartBody.Part.createFormData("tableJson", Gson().toJson(localRepository.changedStudentsData));
+
+        val subscribe = networkRepository
+                .updateTable(tableJsonPart, signJsonPart, signImagePart)
+                .compose(appModule.schedulersRepository.networkAsyncTransformer())
+                .subscribe({
+                    postRouterCommandQueue(RouterCommand.ShowToastRes(R.string.sending), RouterCommand.Close())
+                }, errorHandler)
     }
 
     fun onOptionsItemSelected(itemId: Int, signView: SignView) {

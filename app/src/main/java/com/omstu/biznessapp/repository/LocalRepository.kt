@@ -3,7 +3,9 @@ package com.omstu.biznessapp.repository
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.omstu.biznessapp.network.response.Group
+import com.omstu.biznessapp.network.response.StudentItem
 import kotlin.reflect.KProperty
 
 open class LocalRepository(context: Context) {
@@ -51,6 +53,7 @@ open class LocalRepository(context: Context) {
     var selectedGroup by JsonPreferenceDelegate(Group::class.java)
     var color: Int by IntPreferenceDelegate()
     var strokeWidth: Int by IntPreferenceDelegate(15)
+    var changedStudentsData by JsonPreferenceDelegate(StudentItemsHolder::class.java)
 
     fun clear() {
         sharedPreferences
@@ -59,6 +62,7 @@ open class LocalRepository(context: Context) {
                 .apply()
     }
 
+    data class StudentItemsHolder(val changedStudentsData: MutableMap<String, StudentItem>)
     companion object {
         const val OMSTU_PREFS = "OMSTU_PREFS"
         const val MAX_WIDTH = 25

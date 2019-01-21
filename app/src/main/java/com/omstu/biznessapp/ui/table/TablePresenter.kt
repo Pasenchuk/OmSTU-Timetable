@@ -7,6 +7,7 @@ import com.omstu.biznessapp.di.AppModule
 import com.omstu.biznessapp.domain.GroupHeaderModel
 import com.omstu.biznessapp.network.request.TableRequest
 import com.omstu.biznessapp.network.response.StudentItem
+import com.omstu.biznessapp.repository.LocalRepository
 import com.omstu.biznessapp.router.Button
 import com.omstu.biznessapp.router.RouterCommand
 import com.omstu.biznessapp.router.Screen
@@ -15,6 +16,7 @@ import com.omstu.biznessapp.ui.base.BasePresenter
 class TablePresenter(appModule: AppModule) : BasePresenter(appModule) {
 
     val studentsData = MutableLiveData<List<StudentItem>>()
+    val changedStudentsData: MutableMap<String, StudentItem> = mutableMapOf()
 
     var group: GroupHeaderModel? = null
 
@@ -46,6 +48,11 @@ class TablePresenter(appModule: AppModule) : BasePresenter(appModule) {
     }
 
     fun onFabClick() {
+        localRepository.changedStudentsData = LocalRepository.StudentItemsHolder(changedStudentsData)
         postRouterCommandQueue(RouterCommand.OpenScreen(Screen.SIGN), RouterCommand.Close())
+    }
+
+    fun onEntryChanged(uiModel: StudentItem) {
+        changedStudentsData[uiModel.markStudNrec] = uiModel
     }
 }
