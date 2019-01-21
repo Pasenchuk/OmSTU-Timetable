@@ -27,6 +27,7 @@ open class AppModule(val context: Context,
                      val localeRepository: () -> Locale = { Locale.getDefault() },
                      val resourceRepository: (Int) -> String = { context.getString(it) },
                      val imagesRepository: ImagesRepository = ImagesRepositoryImpl(context),
+                     val localPathRepository: () -> String? = { context.externalCacheDir?.absolutePath },
                      val clipboardRepository: ClipboardRepository = ClipboardRepositoryImpl(context),
                      val dateRepository: () -> Date = { Date() }) {
 

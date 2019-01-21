@@ -64,4 +64,15 @@
     <string name="percent">%</string>
     <string name="rating">Рейтинг</string>
     <string name="sending">Отправка данных…</string>
+    <string name="action_clear">Очистить</string>
+    <string name="action_black">Чёрный цвет</string>
+    <string name="action_blue">Голубой цвет</string>
+    <string name="action_red">Красный цвет</string>
+    <string name="action_green">Зелёный цвет</string>
+    <string name="action_save">Сохранить в качестве изображения</string>
+    <string name="action_finish">Закончить</string>
+    <string name="set_line_width">Установить толщину линии</string>
+    <string name="no_signature_detected">Не обнаружено подписи.</string>
+    <string name="image_saved_at">Изображение сохранено в:</string>
+    <string name="cancel">Отмена</string>
 </resources>

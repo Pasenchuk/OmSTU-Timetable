@@ -21,6 +21,15 @@ open class LocalRepository(context: Context) {
                         .apply()
     }
 
+    inner class IntPreferenceDelegate(private val defaultValue: Int = 0) {
+        operator fun getValue(thisRef: Any?, property: KProperty<*>): Int = sharedPreferences.getInt(property.name, defaultValue)
+        operator fun setValue(thisRef: Any?, property: KProperty<*>, value: Int) =
+                sharedPreferences
+                        .edit()
+                        .putInt(property.name, value)
+                        .apply()
+    }
+
     inner class JsonPreferenceDelegate<T>(private val clazz: Class<T>) {
         operator fun getValue(thisRef: Any?, property: KProperty<*>): T? {
             val json = sharedPreferences.getString(property.name, "null")
@@ -40,6 +49,8 @@ open class LocalRepository(context: Context) {
 
     var email by StringPreferenceDelegate()
     var selectedGroup by JsonPreferenceDelegate(Group::class.java)
+    var color: Int by IntPreferenceDelegate()
+    var strokeWidth: Int by IntPreferenceDelegate(15)
 
     fun clear() {
         sharedPreferences
@@ -50,5 +61,6 @@ open class LocalRepository(context: Context) {
 
     companion object {
         const val OMSTU_PREFS = "OMSTU_PREFS"
+        const val MAX_WIDTH = 25
     }
 }

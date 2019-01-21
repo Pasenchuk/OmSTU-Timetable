@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:stlmenu="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_finish"
+        android:icon="@drawable/ic_action_check"
+        android:title="@string/action_finish"
+        stlmenu:showAsAction="always" />
+    <item
+        android:id="@+id/action_clear"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/action_clear"
+        stlmenu:showAsAction="always" />
+    <item
+        android:id="@+id/action_black"
+        android:icon="@drawable/black_color"
+        android:title="@string/action_black"
+        stlmenu:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_blue"
+        android:icon="@drawable/blue_color"
+        android:title="@string/action_blue"
+        stlmenu:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_red"
+        android:title="@string/action_red"
+        stlmenu:showAsAction="never" />
+    <item
+        android:id="@+id/action_green"
+        android:title="@string/action_green"
+        stlmenu:showAsAction="never" />
+    <item
+        android:id="@+id/action_stroke"
+        android:title="@string/set_line_width"
+        stlmenu:showAsAction="never" />
+    <item
+        android:id="@+id/action_save"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="@string/action_save"
+        stlmenu:showAsAction="never" />
+
+</menu>
